@@ -4,10 +4,9 @@
   "description": "Toy Robot code test implemented using node",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --recursive",
     "lint": "standard",
     "lint-fix": "standard --fix"
-
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,8 @@
   },
   "homepage": "https://github.com/idiotwithalaptop/toy-robot-node#readme",
   "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
     "standard": "^11.0.1"
   }
 }
