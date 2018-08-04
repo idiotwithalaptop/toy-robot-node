@@ -21,6 +21,24 @@ module.exports = class Robot {
       this.direction = placedDirection
       this.x = x
       this.y = y
+    } else {
+      console.error('Attempted to place robot in invalid direction: ' + direction)
+    }
+  }
+
+  turnLeft () {
+    if (this.isPlaced()) {
+      this.direction = this.direction.left
+    } else {
+      console.error('Attempted to turn robot left without prior placement.')
+    }
+  }
+
+  turnRight () {
+    if (this.isPlaced()) {
+      this.direction = this.direction.right
+    } else {
+      console.error('Attempted to turn robot right without prior placement.')
     }
   }
 }
