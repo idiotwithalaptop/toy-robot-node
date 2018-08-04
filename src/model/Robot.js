@@ -41,6 +41,23 @@ module.exports = class Robot {
       console.error('Attempted to turn robot right without prior placement.')
     }
   }
+
+  move(maxX, maxY) {
+    let newX = this.x;
+    let newY = this.y;
+    if (this.isPlaced()) {
+      newX = this.x + this.direction.moveDeltaX
+      newY = this.y + this.direction.moveDeltaY
+    }
+
+    if(newX > 0 && newX < maxX && newY > 0 && newY < maxY) {
+      this.x = newX
+      this.y = newY
+    }
+    else {
+      console.error('Attempted to move robot outside of it\'s maximum bounds.')
+    }
+  }
 }
 
 // Private Functions
