@@ -1,0 +1,29 @@
+{
+  "name": "toy-robot-node",
+  "version": "1.0.0",
+  "description": "Toy Robot code test implemented using node",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard",
+    "lint-fix": "standard --fix"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idiotwithalaptop/toy-robot-node.git"
+  },
+  "keywords": [
+    "toy-robot",
+    "test"
+  ],
+  "author": "Ryan Brown",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/idiotwithalaptop/toy-robot-node/issues"
+  },
+  "homepage": "https://github.com/idiotwithalaptop/toy-robot-node#readme",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
