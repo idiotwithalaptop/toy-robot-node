@@ -4,6 +4,7 @@
   "description": "Toy Robot code test implemented using node",
   "main": "src/index.js",
   "scripts": {
+    "app": "node src/index.js",
     "test": "mocha --recursive",
     "lint": "standard",
     "lint-fix": "standard --fix"
