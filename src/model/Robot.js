@@ -1,6 +1,24 @@
 'use strict'
 const Direction = require('./Direction')
 
+/*
+ * AUTHOR: Ryan Brown
+ *
+ * Robot class that represents the robot.
+ * Tracks the robot's position using x & y coordinates and it's
+ * current direction.  Importantly, it set's up what directions it
+ * supports, it was decided that the Robot was responsible for managing
+ * this since it allows for more expensive robots may support a wider
+ * array of directions, or cheaper less advanced robots to support
+ * fewer directions.
+ *
+ * Attributes available are:
+ *   x - The x axis portion of the robot's current co-ordinates.
+ *   y - The y axis portion of the robot's current co-ordinates.
+ *   direction - The direction that the robot is current facing.
+ *   supportedDirections - A map/dictionary of directions this
+ *     robot supports.
+ */
 module.exports = class Robot {
   constructor () {
     this.x = null
@@ -42,19 +60,18 @@ module.exports = class Robot {
     }
   }
 
-  move(maxX, maxY) {
-    let newX = this.x;
-    let newY = this.y;
+  move (maxX, maxY) {
+    let newX = this.x
+    let newY = this.y
     if (this.isPlaced()) {
       newX = this.x + this.direction.moveDeltaX
       newY = this.y + this.direction.moveDeltaY
     }
 
-    if(newX > 0 && newX < maxX && newY > 0 && newY < maxY) {
+    if (newX > 0 && newX < maxX && newY > 0 && newY < maxY) {
       this.x = newX
       this.y = newY
-    }
-    else {
+    } else {
       console.error('Attempted to move robot outside of it\'s maximum bounds.')
     }
   }

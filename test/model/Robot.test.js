@@ -134,30 +134,30 @@ describe('Robot', function () {
     })
   })
 
-  describe('Movement', function() {
+  describe('Movement', function () {
     let subject = null
     let maxX = 10
     let maxY = 10
 
-    beforeEach(function() {
+    beforeEach(function () {
       subject = new Robot()
     })
 
-    describe('Before placement', function() {
-      beforeEach(function() {
+    describe('Before placement', function () {
+      beforeEach(function () {
         subject.move(maxX, maxY)
       })
 
-      it('should not be placed', function() {
+      it('should not be placed', function () {
         expect(subject.isPlaced()).to.equal(false)
       })
     })
 
-    describe('After placement at maxX facing EAST', function() {
-      beforeEach(function() {
-        subject.place(maxX, 1, "EAST")
+    describe('After placement at maxX facing EAST', function () {
+      beforeEach(function () {
+        subject.place(maxX, 1, 'EAST')
       })
-      it('should not make any movement', function() {
+      it('should not make any movement', function () {
         let yBefore = subject.y
         let xBefore = subject.x
 
@@ -167,11 +167,11 @@ describe('Robot', function () {
       })
     })
 
-    describe('After placement at maxY facing NORTH', function() {
-      beforeEach(function() {
-        subject.place(1, maxY, "NORTH")
+    describe('After placement at maxY facing NORTH', function () {
+      beforeEach(function () {
+        subject.place(1, maxY, 'NORTH')
       })
-      it('should not make any movement', function() {
+      it('should not make any movement', function () {
         let yBefore = subject.y
         let xBefore = subject.x
 
@@ -181,11 +181,11 @@ describe('Robot', function () {
       })
     })
 
-    describe('After placement at x=0 facing WEST', function() {
-      beforeEach(function() {
-        subject.place(0, 1, "WEST")
+    describe('After placement at x=0 facing WEST', function () {
+      beforeEach(function () {
+        subject.place(0, 1, 'WEST')
       })
-      it('should not make any movement', function() {
+      it('should not make any movement', function () {
         let yBefore = subject.y
         let xBefore = subject.x
 
@@ -195,11 +195,11 @@ describe('Robot', function () {
       })
     })
 
-    describe('After placement at y=0 facing SOUTH', function() {
-      beforeEach(function() {
-        subject.place(1, 0, "SOUTH")
+    describe('After placement at y=0 facing SOUTH', function () {
+      beforeEach(function () {
+        subject.place(1, 0, 'SOUTH')
       })
-      it('should not make any movement', function() {
+      it('should not make any movement', function () {
         let yBefore = subject.y
         let xBefore = subject.x
 
@@ -209,16 +209,16 @@ describe('Robot', function () {
       })
     })
 
-    describe('After placement at (1,1) facing EAST', function() {
-      beforeEach(function() {
-        subject.place(1, 1, "EAST")
+    describe('After placement at (1,1) facing EAST', function () {
+      beforeEach(function () {
+        subject.place(1, 1, 'EAST')
         subject.move(maxX, maxY)
       })
-      it('should move to (2,1)', function() {
+      it('should move to (2,1)', function () {
         expect(subject.y).to.equal(1)
         expect(subject.x).to.equal(2)
       })
-      it('should face EAST', function() {
+      it('should face EAST', function () {
         expect(subject.direction.name).to.equal('EAST')
       })
     })
