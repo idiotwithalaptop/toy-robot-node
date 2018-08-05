@@ -1,3 +1,13 @@
+/*
+ * Author: Ryan Brown
+ *
+ * Line Parser module, accepts an input stream, parses & validates the input into commands,
+ * issues those commands using a simple command pattern.
+ * Used to read stream of commands from keyboard or file.
+ *
+ * Line parser's parse function returns a Promise to provide callers with a simple way to
+ * react to success and failures.
+ */
 const readline = require('readline')
 const utils = require('../utils')
 

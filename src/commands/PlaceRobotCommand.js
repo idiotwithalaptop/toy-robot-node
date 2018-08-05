@@ -1,3 +1,8 @@
+/*
+ * Author: Ryan Brown
+ *
+ * Place Robot Command module, used to place Robot onto the table.
+ */
 const utils = require('../utils')
 const Robot = require('../model/Robot')
 const Table = require('../model/Table')

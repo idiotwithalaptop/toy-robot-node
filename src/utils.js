@@ -1,3 +1,8 @@
+/*
+ * Author: Ryan Brown
+ *
+ * Common utility module.  Used as a place to refactor commonly used code into generic functions.
+ */
 const _integerRegex = /^-?\d+$/
 
 function isNullOrUndefined (obj) {

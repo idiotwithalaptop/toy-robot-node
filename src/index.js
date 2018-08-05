@@ -1,3 +1,10 @@
+/*
+ * Author: Ryan Brown
+ *
+ * Entry point for simulator.  Initialises the Robot, Table and lineReader to read from STDIN.  This allows for
+ * maximum flexibility to read from either file or keyboard.
+ *
+ */
 const lineReader = require('./commands/LineParser')
 const Robot = require('./model/Robot')
 const Table = require('./model/Table')

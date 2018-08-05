@@ -1,3 +1,8 @@
+/*
+ * Author: Ryan Brown
+ *
+ * Left Command module, used to issue the turn left command to the robot.
+ */
 const utils = require('../utils')
 const Robot = require('../model/Robot')
 const Table = require('../model/Table')

@@ -1,3 +1,8 @@
+/*
+ * Author: Ryan Brown
+ *
+ * Move Command module, used to issue the move command to the robot.
+ */
 const utils = require('../utils')
 const Robot = require('../model/Robot')
 const Table = require('../model/Table')

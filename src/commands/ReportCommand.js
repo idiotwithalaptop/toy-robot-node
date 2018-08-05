@@ -1,3 +1,8 @@
+/*
+ * Author: Ryan Brown
+ *
+ * Report Command module, used to output the robot's status to the STDOUT.
+ */
 const utils = require('../utils')
 const Robot = require('../model/Robot')
 const Table = require('../model/Table')

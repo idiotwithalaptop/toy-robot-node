@@ -1,3 +1,8 @@
+/*
+ * Author: Ryan Brown
+ *
+ * Right Command module, used to issue the turn right command to the robot.
+ */
 const utils = require('../utils')
 const Robot = require('../model/Robot')
 const Table = require('../model/Table')
