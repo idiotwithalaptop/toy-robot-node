@@ -16,7 +16,7 @@ function parse (inputStream, robot, table) {
       const lines = readline.createInterface({
         input: inputStream
       })
-      let successfulCommands = 0;
+      let successfulCommands = 0
 
       lines.on('line', function (line) {
         if (commandRegex.test(line)) {
@@ -30,7 +30,7 @@ function parse (inputStream, robot, table) {
         }
       })
 
-      lines.on('SIGINT', function() {
+      lines.on('SIGINT', function () {
         resolve(successfulCommands)
       })
 
@@ -38,7 +38,7 @@ function parse (inputStream, robot, table) {
         resolve(successfulCommands)
       })
     } catch (error) {
-      reject()
+      reject(error)
     }
   })
 }

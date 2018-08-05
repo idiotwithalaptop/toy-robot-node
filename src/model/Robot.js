@@ -68,7 +68,7 @@ module.exports = class Robot {
       newY = this.y + this.direction.moveDeltaY
     }
 
-    if (newX >= 0 && newX < maxX && newY >= 0 && newY < maxY) {
+    if (newX >= 0 && newX <= maxX && newY >= 0 && newY <= maxY) {
       this.x = newX
       this.y = newY
     } else {
