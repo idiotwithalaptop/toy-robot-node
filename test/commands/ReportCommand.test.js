@@ -2,8 +2,8 @@
 const command = require('../../src/commands/ReportCommand')
 const Robot = require('../../src/model/Robot')
 const Table = require('../../src/model/Table')
-const expect = require('chai').expect
-const StringWritable = require('../StringWritable')
+const { expect } = require('chai')
+const sinon = require('sinon')
 
 describe('ReportCommand', function () {
   let robot = null
@@ -15,11 +15,11 @@ describe('ReportCommand', function () {
 
   describe('run()', function () {
     describe('Before robot placement', function () {
-      it('should not have written to stream', function () {
-        const streamOut = new StringWritable()
-        command.run(robot, table, [streamOut])
-        streamOut.end()
-        expect(streamOut.data.length).to.equal(0)
+      it('should not have called to console.log', function () {
+        let spy = sinon.spy(console, 'log')
+        command.run(robot, table)
+        expect(spy.callCount).to.equal(0)
+        spy.restore()
       })
     })
 
@@ -28,11 +28,16 @@ describe('ReportCommand', function () {
         robot.place(1, 3, 'NORTH')
       })
 
-      it('should have written to stream', function () {
-        const streamOut = new StringWritable()
-        command.run(robot, table, [streamOut])
-        streamOut.end()
-        expect(streamOut.data).to.equal('1,3,NORTH\n\r')
+      it('should have called to console.log', function () {
+        let spy = sinon.spy(console, 'log')
+        command.run(robot, table)
+        expect(spy.callCount).to.equal(1)
+
+        expect(spy.getCall(0).args[0]).to.equal('%s,%s,%s')
+        expect(spy.getCall(0).args[1]).to.equal(1)
+        expect(spy.getCall(0).args[2]).to.equal(3)
+        expect(spy.getCall(0).args[3]).to.equal('NORTH')
+        spy.restore()
       })
     })
   })

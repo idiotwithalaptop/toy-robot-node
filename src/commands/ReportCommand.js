@@ -6,8 +6,7 @@ function run (robot, table, args) {
   let validationResult = validate(robot, table, args)
 
   if (validationResult) {
-    let [ outputStream ] = args
-    outputStream.write('' + robot.x + ',' + robot.y + ',' + robot.direction.name + '\n\r')
+    console.log('%s,%s,%s', robot.x, robot.y, robot.direction.name)
   } else {
     console.error('Report command failed validation Report{robot: %o, table: %o, args: \'%s\'}', robot, table, JSON.stringify(args))
   }
@@ -24,10 +23,6 @@ function validate (robot, table, args) {
   // validate table
   result = result && utils.isNotNullOrUndefined(table)
   result = result && table instanceof Table
-
-  // validate args
-  result = result && args.length === 1
-  result = result && utils.isNotNullOrUndefined(args[0])
 
   return result
 }
