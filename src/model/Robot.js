@@ -68,7 +68,7 @@ module.exports = class Robot {
       newY = this.y + this.direction.moveDeltaY
     }
 
-    if (newX > 0 && newX < maxX && newY > 0 && newY < maxY) {
+    if (newX >= 0 && newX < maxX && newY >= 0 && newY < maxY) {
       this.x = newX
       this.y = newY
     } else {
@@ -83,7 +83,7 @@ function generateSupportedDirections () {
   // Create directions and their relationships.
   let north = new Direction('NORTH', 0, 1)
   let east = new Direction('EAST', 1, 0)
-  let south = new Direction('SOUTH', -1, 0)
+  let south = new Direction('SOUTH', 0, -1)
   let west = new Direction('WEST', -1, 0)
   north.insertToRight(east)
   east.insertToRight(south)
