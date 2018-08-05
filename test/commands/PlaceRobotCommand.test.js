@@ -56,7 +56,7 @@ describe('PlaceRobotCommand', function () {
       const x = 1
       const y = 3
       const direction = 'EAST'
-      const args = {x: x.toString(), y: y.toString(), direction: direction}
+      const args = [x.toString(), y.toString(), direction]
       beforeEach(function () {
         command.run(robot, table, args)
       })

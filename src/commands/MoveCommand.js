@@ -8,7 +8,7 @@ function run (robot, table, args) {
   if (validationResult) {
     robot.move(table.width, table.height)
   } else {
-    console.error('Left command failed validation Left{robot: %o, table: %o', robot, table)
+    console.error('Move command failed validation Move{robot: %o, table: %o', robot, table)
   }
 }
 

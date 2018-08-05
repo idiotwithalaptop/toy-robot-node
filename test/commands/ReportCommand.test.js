@@ -17,7 +17,7 @@ describe('ReportCommand', function () {
     describe('Before robot placement', function () {
       it('should not have written to stream', function () {
         const streamOut = new StringWritable()
-        command.run(robot, table, {outputStream: streamOut})
+        command.run(robot, table, [streamOut])
         streamOut.end()
         expect(streamOut.data.length).to.equal(0)
       })
@@ -30,7 +30,7 @@ describe('ReportCommand', function () {
 
       it('should have written to stream', function () {
         const streamOut = new StringWritable()
-        command.run(robot, table, {outputStream: streamOut})
+        command.run(robot, table, [streamOut])
         streamOut.end()
         expect(streamOut.data).to.equal('1,3,NORTH\n\r')
       })
